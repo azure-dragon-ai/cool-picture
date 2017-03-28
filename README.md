@@ -19,4 +19,7 @@
     # run all tests
     npm test
 
+## Matters
+  采用 cnpm 安装 运行时可能会报 $t 错误
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
