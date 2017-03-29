@@ -38,6 +38,7 @@ api.get('/base', function(req, res, next) {
     if(err) return next(err);
     var $ = cheerio.load(sres.text);
     var data = {
+      showbox: [],
       list: []
     };
 
@@ -55,11 +56,18 @@ api.get('/base', function(req, res, next) {
         pinglun: $ele.find('.camLiDes .cf30').eq(1).text() || '',
         tuijian: $ele.find('.camLiDes .cf30').eq(2).text() || ''
       })
-    })
+    });
+
+    $('.indexShowBox li img').each((i, ele) => {
+      var $ele = $(ele);
+      data.showbox.push({
+        image: $ele.attr('src')
+      })
+    });
 
     res.send(data)
     if (data.list.length > 0) {
-      fs.writeFileSync(path.resolve(__dirname, '../data/base_data.json'), JSON.stringify(data));
+      fs.writeFileSync(path.resolve(__dirname, '../dist/data/base_data.json'), JSON.stringify(data));
     }
   });
 })

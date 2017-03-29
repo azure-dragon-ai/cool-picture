@@ -4,7 +4,7 @@ import { AjaxPlugin } from 'vux'
 
 Vue.use(Vuex)
 
-let io_base = ''
+let io_base = './data/base_data.json'
 if (process.env.NODE_ENV === 'development') {
   io_base = '/io/base'
 }
