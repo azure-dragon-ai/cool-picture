@@ -38,7 +38,6 @@ export default {
 
 <style lang="less">
   .photo_content{
-    // padding-top: 15px;
     background: #fff;
   }
   .cc_dots{
