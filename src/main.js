@@ -7,6 +7,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import './style/font/iconfont.css'
+
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false
