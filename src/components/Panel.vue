@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="less">
-  @import "../style/index.less";
+  @import "../style/mixin.less";
 
   .cc_panel_wapper{
     margin-left: -15px;
