@@ -16,4 +16,8 @@ export default {
 body {
   background-color: #fbf9fe;
 }
+
+.image {
+  width: 100%;
+}
 </style>
