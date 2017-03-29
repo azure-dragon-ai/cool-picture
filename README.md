@@ -1,8 +1,8 @@
-# Cool picture
+# Cool ✌️ picture
 
-- 😾  好看的图片网站
-- 📖  采用 vue2 全家桶
-- 💊  UI 框架 vux `airyland/vux2`
+- 好看的图片网站
+- 采用 vue2 全家桶
+- UI 框架 vux `airyland/vux2`
 - 数据采集自 zcool
 
 ## Build Setup
@@ -19,7 +19,7 @@
     # run all tests
     npm test
 
-## Warn
+## Warn :full_moon_with_face:
   采用 cnpm 安装 运行时可能会报 $t 错误
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
