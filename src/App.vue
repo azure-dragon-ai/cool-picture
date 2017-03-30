@@ -24,4 +24,12 @@ body {
 .image {
   width: 100%;
 }
+
+.content{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 52px;
+  overflow: auto;
+}
 </style>

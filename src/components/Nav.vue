@@ -5,7 +5,11 @@
         v-for="(li, index) in navlist"
         :to="li.hf"
         :key="index"
-        active-class="active"> {{li.tit}}
+        class="nav_item"
+        tag="li"
+        active-class="active">
+        <i class="iconfont" :class="li.ic"></i>
+        {{li.tit}}
       </router-link>
     </ul>
   </div>
@@ -17,7 +21,7 @@ export default {
     return {
       navlist: [
         {
-          ic: 'icon-shouye16',
+          ic: 'icon-shouye',
           hf: '/',
           tit: '首页'
         },
@@ -49,7 +53,29 @@ export default {
 @import "../style/mixin.less";
 
 .nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 52px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,.16);
+  z-index: 90;
 
+  &_item {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    font-size: 12px;
+    color: @color_desc;
+    padding-top: 3px;
+    i {
+      display: block;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+  }
 }
 
 </style>
