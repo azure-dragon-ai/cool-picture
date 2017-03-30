@@ -1,4 +1,4 @@
-# Cool ✌️ picture
+# Cool :v: picture
 
 - 好看的图片网站
 - 采用 vue2 全家桶
