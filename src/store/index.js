@@ -29,7 +29,6 @@ const actions = {
   },
   getListBy({commit, state}, page) {
     AjaxPlugin.$http.get(io_home_list + '?page=' + page).then((res) => {
-      // console.log();
       commit('GET_DATA', { list: state.base_data.list.concat(res.data.list) })
     })
   }
