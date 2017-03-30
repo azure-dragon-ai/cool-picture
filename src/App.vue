@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view class="content"></router-view>
+    <v-nav></v-nav>
   </div>
 </template>
 
 <script>
+import vNav from './components/Nav.vue'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: { vNav }
 }
 </script>
 

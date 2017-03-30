@@ -5,9 +5,9 @@
         :style="{background:'url('+img.image+') center center / cover no-repeat'}">
       </swiper-item>
     </swiper>
-    <search></search>
-    <div class="photo_content">
-      <c-panel :list="data.list"></c-panel>
+    <content-nav />
+    <div class="content_photo">
+      <c-panel :list="data.list" />
     </div>
   </div>
 </template>
@@ -15,13 +15,15 @@
 <script>
 import { Search, Swiper, SwiperItem } from 'vux'
 import cPanel from './Panel'
+import ContentNav from './ContentNav'
 
 export default {
   components: {
     Search,
     Swiper,
     SwiperItem,
-    cPanel
+    cPanel,
+    ContentNav
   },
   computed: {
     data() {
@@ -37,16 +39,17 @@ export default {
 </script>
 
 <style lang="less">
-  .photo_content{
-    background: #fff;
-  }
-  .cc_dots{
-    bottom: 5px !important;
-    .vux-icon-dot {
-      background-color: rgba(255, 255, 255, .4) !important;
-      &.active {
-        background-color: #8AEEB1 !important;
-      }
+.content_photo{
+  background: #fff;
+}
+
+.cc_dots{
+  bottom: 5px !important;
+  .vux-icon-dot {
+    background-color: rgba(255, 255, 255, .4) !important;
+    &.active {
+      background-color: #8AEEB1 !important;
     }
   }
+}
 </style>
