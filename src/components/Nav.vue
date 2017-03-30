@@ -26,20 +26,17 @@ export default {
           tit: '首页'
         },
         {
-          cn: 'glow',
-          ic: 'icon-shouye8',
+          ic: 'icon-icon2',
           hf: 'javascript:',
           tit: '作品'
         },
         {
-          cn: 'blue',
-          ic: 'icon-icon4',
+          ic: 'icon-shouye12',
           hf: 'javascript:',
           tit: '文章'
         },
         {
-          cn: 'qinblue',
-          ic: 'icon-shouye15',
+          ic: 'icon-shouye2',
           hf: 'javascript:',
           tit: '我的'
         }
@@ -60,7 +57,7 @@ export default {
   height: 52px;
   background: #fff;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,.16);
+  box-shadow: 0 0 15px rgba(0, 0, 0, .16);
   z-index: 90;
 
   &_item {
@@ -70,6 +67,10 @@ export default {
     font-size: 12px;
     color: @color_desc;
     padding-top: 3px;
+
+    &.active {
+      color: @color_active;
+    }
     i {
       display: block;
       font-size: 24px;

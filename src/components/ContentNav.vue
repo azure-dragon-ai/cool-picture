@@ -26,7 +26,7 @@ export default {
           cn: 'glow',
           ic: 'icon-shouye8',
           hf: 'javascript:',
-          tit: '路径'
+          tit: '创意'
         },
         {
           cn: 'blue',
