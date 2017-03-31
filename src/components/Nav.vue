@@ -5,6 +5,7 @@
         v-for="(li, index) in navlist"
         :to="li.hf"
         :key="index"
+        :exact="li.exa"
         class="nav_item"
         tag="li"
         active-class="active">
@@ -23,22 +24,26 @@ export default {
         {
           ic: 'icon-shouye',
           hf: '/',
-          tit: '首页'
+          tit: '首页',
+          exa: true
         },
         {
           ic: 'icon-icon2',
-          hf: 'javascript:',
-          tit: '作品'
+          hf: '/works',
+          tit: '作品',
+          exa: false
         },
         {
           ic: 'icon-shouye12',
-          hf: 'javascript:',
-          tit: '文章'
+          hf: 'articles',
+          tit: '文章',
+          exa: false
         },
         {
           ic: 'icon-shouye2',
-          hf: 'javascript:',
-          tit: '我的'
+          hf: 'user',
+          tit: '我的',
+          exa: false
         }
       ]
     }
@@ -67,6 +72,7 @@ export default {
     font-size: 12px;
     color: @color_desc;
     padding-top: 3px;
+    transition: all .3s ease;
 
     &.active {
       color: @color_active;

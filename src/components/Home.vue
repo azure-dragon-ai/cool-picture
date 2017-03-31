@@ -68,6 +68,8 @@ export default {
 </script>
 
 <style lang="less">
+@import "../style/mixin.less";
+
 .content_photo{
   background: #fff;
 }
@@ -83,6 +85,9 @@ export default {
 }
 .cc_loadmore{
   margin: 5px auto !important;
+  span {
+    color: @color_desc;
+  }
 }
 
 .rotate {
