@@ -1,9 +1,9 @@
 # Cool :v: picture
 
-- 好看的图片网站
-- 采用 vue2 全家桶
+- 做个好看的图片收集网站
+- 采用 Vue2 全家桶
 - UI 框架 vux `airyland/vux2`
-- 数据采集自 zcool
+- 数据采集自 Zcool
 
 ## Build Setup
     bash

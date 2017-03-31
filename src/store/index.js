@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 let io_base = './data/base_data.json'
 let io_home_list = './data/home_list_data.json'
+
 if (process.env.NODE_ENV === 'development') {
   io_base = '/io/base'
   io_home_list = '/io/homelist'

@@ -1,6 +1,5 @@
 <template>
   <scroller lock-x use-pullup
-    :pullup-config="pullup_cfg"
     v-model="status"
     @on-pullup-loading="pullup"
     height="-52"
@@ -12,24 +11,34 @@
         </swiper-item>
       </swiper>
       <content-nav />
+      <div class="part"></div>
       <div class="content_photo">
         <c-panel :list="data.list" />
       </div>
+    </div>
+
+    <!--pullup slot { pullupStatus : default , up , down , loading } -->
+    <div slot="pullup" class="xs-plugin-pullup-container xs-plugin-pullup-up">
+      <span class="pullup-arrow iconfont" v-show="status.pullupStatus !== 'loading'"
+        :class="{'rotate': status.pullupStatus === 'down'}">&#xe7a8;</span>
+      <span v-show="status.pullupStatus === 'loading'">
+        <load-more tip="努力加载中" class="cc_loadmore"></load-more>
+      </span>
     </div>
   </scroller>
 </template>
 
 <script>
-import { Search, Swiper, SwiperItem, Scroller } from 'vux'
+import { Swiper, SwiperItem, Scroller, LoadMore } from 'vux'
 import cPanel from './Panel'
 import ContentNav from './ContentNav'
 
 export default {
   components: {
-    Search,
     Swiper,
     SwiperItem,
     Scroller,
+    LoadMore,
     cPanel,
     ContentNav
   },
@@ -52,12 +61,6 @@ export default {
       page: 1,
       status: {
         pullupStatus: 'default'
-      },
-      pullup_cfg: {
-        content: '上滑加载更多',
-        downContent: '松手',
-        upContent: '上滑加载更多',
-        loadingContent: '加载中...'
       }
     }
   }
@@ -77,5 +80,21 @@ export default {
       background-color: #8AEEB1 !important;
     }
   }
+}
+.cc_loadmore{
+  margin: 5px auto !important;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+
+.pullup-arrow {
+  display: block;
+  transition: all linear 0.2s;
+  -webkit-transition: all linear 0.2s;
+  color: #666;
+  font-size: 25px;
 }
 </style>

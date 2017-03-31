@@ -17,8 +17,10 @@ export default {
 <style lang="less">
 @import '~vux/src/styles/reset.less';
 
-body {
-  background-color: #fbf9fe;
+.part {
+  width: 100%;
+  height: 12px;
+  background: #f9f8fb;
 }
 
 .image {

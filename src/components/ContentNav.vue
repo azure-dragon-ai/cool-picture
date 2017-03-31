@@ -58,7 +58,7 @@ export default {
 .content_nav {
   padding: 15px 0 10px;
   background: #fff;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   &_li {
     display: inline-block;
     width: 20%;
