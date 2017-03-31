@@ -1,7 +1,9 @@
 <template>
-  <div>
-    123
+<div>
+  <div class="svg_wapper">
+
   </div>
+</div>
 </template>
 
 <script>
@@ -9,7 +11,7 @@ export default {
   mounted() {
 
   },
-  data () {
+  data() {
     return {
       msg: 'Hello World!'
     }
@@ -18,5 +20,9 @@ export default {
 </script>
 
 <style>
+.svg_wapper{
+  width: 20%;
+  margin: 50px auto;
+}
 
 </style>
