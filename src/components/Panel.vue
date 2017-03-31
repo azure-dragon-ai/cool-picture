@@ -2,7 +2,12 @@
   <div class="cc_panel_wapper">
     <div class="cc_panel_detail" v-for="(item, index) in list" :key="index">
       <div class="cc_panel_detail_image_wapper">
-        <img :src="item.image" alt="预览图" class="image">
+        <img
+          v-lazy="item.image"
+          alt="预览图"
+          class="image"
+          width="250"
+          height="188">
       </div>
       <div class="cc_panel_detail_info">
         <h4 class="title">{{item.title}}</h4>
@@ -45,9 +50,21 @@ export default {
       box-sizing: border-box;
 
       &_image_wapper {
+        position: relative;
         margin-bottom: 5px;
+        width: 100%;
+        padding-top: (188/250)*100%;
+
         .image {
-          border-radius: 3px
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 3px;
+          opacity: 0;
+          transition: opacity .4s ease;
+          &[lazy=loaded] {
+            opacity: 1;
+          }
         }
       }
 
