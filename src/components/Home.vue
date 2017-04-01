@@ -84,7 +84,7 @@ export default {
   }
 }
 .cc_loadmore{
-  margin: 5px auto !important;
+  margin: 0 auto 5px !important;
   span {
     color: @color_desc;
   }
