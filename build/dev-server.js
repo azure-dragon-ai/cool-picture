@@ -25,41 +25,11 @@ var proxyTable = config.dev.proxyTable
 var app = express()
 
 /******************
- * 模拟后台数据    *
- * 并且添加到 json *
+ *  模拟后台数据   *
  ******************/
-var superagent = require('superagent');
-var cheerio = require('cheerio');
-var fs = require('fs');
-var fd = require('./fetchData')
-var api = express.Router()
-
-api.get('/base', function(req, res, next) {
-  superagent.get('http://www.zcool.com.cn/').end((err, sres) => {
-    if(err) return next(err);
-    var $ = cheerio.load(sres.text);
-    var data = {
-      showbox: fd.showbox($),
-      list: fd.homelist($)
-    };
-    res.send(data);
-    if (data.list.length > 0) fd.setData(data, 'base_data');
-  });
-})
-
-api.get('/homelist', function(req, res, next) {
-  var page = req.query.page;
-  superagent.get('http://www.zcool.com.cn/index!'+ page +'.html#mainList').end((err, sres) => {
-    if(err) return next(err);
-    var $ = cheerio.load(sres.text);
-    var data = { list: fd.homelist($) };
-    res.send(data);
-    if (data.list.length > 0) fd.setData(data, 'home_list_data');
-  })
-})
-
-app.use('/io', api)
-
+// var api = express.Router()
+// require('./fetchData')(api)
+// app.use('/io', api)
 
 
 var compiler = webpack(webpackConfig)

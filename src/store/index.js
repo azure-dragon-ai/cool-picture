@@ -1,13 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+Vue.use(Vuex)
 
 import {
-  ajax,
+  jsonp,
+  $dom,
+  homelist,
+  showbox
+} from '../mixin/util'
+
+import {
   io_base,
   io_home_list
 } from '../mixin/url.js'
 
-Vue.use(Vuex)
 
 const state = {
   base_data: {}
@@ -20,12 +26,17 @@ const mutations = {
 }
 
 const actions = {
-  getData({commit}) {
-    ajax(io_base).then(res => commit('GET_DATA', res.data))
+  getData({ commit }) {
+    jsonp(io_base).then(res => $dom(res.body)).then($ => {
+      commit('GET_DATA', {
+        list: homelist($),
+        showbox: showbox($)
+      })
+    })
   },
-  getListBy({commit, state}, page) {
-    ajax(io_home_list, { page: page }).then(res => {
-      commit('GET_DATA', { list: state.base_data.list.concat(res.data.list)})
+  getListBy({ commit, state }, page) {
+    jsonp(io_home_list, { page: page }).then(res => $dom(res.body)).then($ => {
+      commit('GET_DATA', { list: state.base_data.list.concat(homelist($))})
     })
   }
 }

@@ -1,13 +1,15 @@
-import { AjaxPlugin } from 'vux'
-
 const baseUrl = 'http://cloud.bmob.cn/c643aa3e5b0420b8/io_base'
 
-export function getAjax(url, data = {}) {
-  return new Promise((res, rej) => {
-    AjaxPlugin.$http.get(url + '?' + formatParams(data)).then(cb => res(cb))
-  })
+// 序列号表单
+const formatParams = function(data) {
+	var arr = [];
+	for (var name in data) {
+		arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+	}
+	return arr.join('&');
 }
 
+// jsonp
 export function jsonp(url, data = {}) {
   return new Promise((res, rej) => {
     data.url = url
@@ -27,10 +29,44 @@ export function jsonp(url, data = {}) {
   })
 }
 
-function formatParams(data) {
-	var arr = [];
-	for (var name in data) {
-		arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
-	}
-	return arr.join('&');
+// DOM 解析
+const Dom = function (data) {
+  var el = document.createElement('div')
+  el.innerHTML = data
+  this.el = el;
+  return function (sel) {
+    return el.querySelectorAll(sel)
+  }
+}
+
+// 入口
+export function $dom(data) {
+  return new Dom(data)
+}
+
+export function homelist($) {
+  let list = []
+  $('.camWholeBoxUl li').forEach(el => {
+    list.push({
+      title: el.querySelector('.camLiTitleC a').textContent,
+      image: el.querySelector('img').getAttribute('src'),
+      username: el.querySelector('table span').textContent,
+      userhead: el.querySelector('table img').getAttribute('src'),
+      update: (el.querySelector('.camLiDes').innerHTML).match(/<br>(.*)<br>/)[1] || '',
+      reqi: el.querySelectorAll('.camLiDes .cf30')[0].textContent || '',
+      pinglun: el.querySelectorAll('.camLiDes .cf30')[1].textContent || '',
+      tuijian: el.querySelectorAll('.camLiDes .cf30')[2].textContent || ''
+    })
+  })
+  return list
+}
+
+export function showbox($) {
+  let list = []
+  $('.indexShowBox li img').forEach(el => {
+    list.push({
+      image: el.getAttribute('src')
+    })
+  })
+  return list
 }
