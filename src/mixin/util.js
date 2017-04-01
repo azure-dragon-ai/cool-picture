@@ -1,6 +1,6 @@
 const baseUrl = 'http://cloud.bmob.cn/c643aa3e5b0420b8/io_base'
 
-// 序列号表单
+// 序列表单
 const formatParams = function(data) {
 	var arr = [];
 	for (var name in data) {
@@ -47,8 +47,11 @@ export function $dom(data) {
 export function homelist($) {
   let list = []
   $('.camWholeBoxUl li').forEach(el => {
+    let href = el.querySelector('.camLiTitleC a').getAttribute('href')
+
     list.push({
       title: el.querySelector('.camLiTitleC a').textContent,
+      link: href.replace(/(http:\/\/www.zcool.com.cn)|(\.html)/g,''),
       image: el.querySelector('img').getAttribute('src'),
       username: el.querySelector('table span').textContent,
       userhead: el.querySelector('table img').getAttribute('src'),
@@ -58,6 +61,7 @@ export function homelist($) {
       tuijian: el.querySelectorAll('.camLiDes .cf30')[2].textContent || ''
     })
   })
+  // console.log(list);
   return list
 }
 

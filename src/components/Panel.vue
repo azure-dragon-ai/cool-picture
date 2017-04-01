@@ -1,6 +1,6 @@
 <template>
   <div class="cc_panel_wapper">
-    <div class="cc_panel_detail" v-for="(item, index) in list" :key="index">
+    <div class="cc_panel_detail" v-for="(item, index) in list" :key="index" @click="jmp(item.link)">
       <div class="cc_panel_detail_image_wapper">
         <img
           v-lazy="item.image"
@@ -22,7 +22,12 @@
 
 <script>
 export default {
-  props: [ 'list' ]
+  props: [ 'list' ],
+  methods: {
+    jmp(link) {
+      this.$router.push(link)
+    }
+  }
 }
 </script>
 

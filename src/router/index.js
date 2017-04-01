@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/HelloFromVux'
 import Home from '@/components/Home'
 import Works from '@/components/Works'
+import WorkDetail from '@/components/WorkDetail'
 import Articles from '@/components/Articles'
+import ArticleDetail from '@/components/ArticleDetail'
 import User from '@/components/User'
 
 Vue.use(Router)
@@ -21,9 +22,19 @@ export default new Router({
       component: Works
     },
     {
+      path: '/work/:id',
+      name: 'WorkDetail',
+      component: WorkDetail
+    },
+    {
       path: '/articles',
       name: 'Articles',
       component: Articles
+    },
+    {
+      path: '/article/:id',
+      name: 'ArticleDetail',
+      component: ArticleDetail
     },
     {
       path: '/user',
