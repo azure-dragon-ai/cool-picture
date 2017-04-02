@@ -1,7 +1,6 @@
 <template>
 <div class="content_full">
   <div class="cc_detail_content" v-html="content"></div>
-
 </div>
 </template>
 

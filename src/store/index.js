@@ -12,7 +12,7 @@ import {
 import {
   io_base,
   io_home_list
-} from '../mixin/url.js'
+} from '../mixin/url'
 
 
 const state = {
