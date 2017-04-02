@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 import {
-  jsonp,
+  jsonp as ajax,
   $dom,
   homelist,
   showbox
@@ -27,7 +27,7 @@ const mutations = {
 
 const actions = {
   getData({ commit }) {
-    jsonp(io_base).then(res => $dom(res.body)).then($ => {
+    ajax(io_base).then(res => $dom(res.body)).then($ => {
       commit('GET_DATA', {
         list: homelist($),
         showbox: showbox($)
@@ -35,7 +35,7 @@ const actions = {
     })
   },
   getListBy({ commit, state }, page) {
-    jsonp(io_home_list, { page: page }).then(res => $dom(res.body)).then($ => {
+    ajax(io_home_list, { page: page }).then(res => $dom(res.body)).then($ => {
       commit('GET_DATA', { list: state.base_data.list.concat(homelist($))})
     })
   }

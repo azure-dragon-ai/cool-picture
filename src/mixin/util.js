@@ -74,3 +74,24 @@ export function showbox($) {
   })
   return list
 }
+
+export function workContent($) {
+  return $('.workContent')[0].innerHTML
+}
+
+export function workInfor($) {
+  return $('.workInfor')[0].innerHTML
+}
+
+export function workShow($) {
+  let play = $('#letv-player')[0]
+  play && play.parentNode.removeChild(play)
+  let show = $('.workShow ul')[0]
+
+  $('.workShow ul li a').forEach(el => {
+    let hr = el.getAttribute('href').replace(/\/img.html#src=/,'')
+    el.setAttribute('href', hr)
+  })
+
+  return show.innerHTML
+}
