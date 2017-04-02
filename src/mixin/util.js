@@ -41,7 +41,7 @@ const Dom = function (data) {
 
 // 入口
 export function $dom(data) {
-  return new Dom(data)
+  return new Dom(decodeURI(data))
 }
 
 export function homelist($) {
