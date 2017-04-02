@@ -10,7 +10,7 @@ import { io_detail } from '../mixin/url'
 
 export default {
   mounted() {
-    jsonp(io_detail, {path: this.$route.path}).then(res => console.log(res))
+    jsonp(io_detail, {path: this.$route.path}).then(res => console.log(JSON.stringify(res)))
   },
   data () {
     return {
