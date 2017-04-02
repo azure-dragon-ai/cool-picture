@@ -16,26 +16,4 @@ export default {
 
 <style lang="less">
 @import '~vux/src/styles/reset.less';
-
-.part {
-  width: 100%;
-  height: 12px;
-  background: #f9f8fb;
-}
-
-.image {
-  width: 100%;
-  height: auto;
-}
-
-.content{
-  position: absolute;
-  top:0;
-  left: 0;
-  bottom: 52px;
-  width: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-}
 </style>

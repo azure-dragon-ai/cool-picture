@@ -7,7 +7,7 @@ import Total from './mixin/total'
 import App from './App'
 import router from './router'
 import store from './store'
-import './style/font/iconfont.css'
+import './style/index.less'
 require('es6-promise').polyfill()
 
 Vue.use(VueLazyload)

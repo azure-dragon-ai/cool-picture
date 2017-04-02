@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="content_full">
     <div class="cc_detail_content">
       <div class="cc_detail_content_info" v-html="info"></div>
       <ul class="cc_detail_content_show" v-html="show"></ul>
