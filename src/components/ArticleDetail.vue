@@ -32,7 +32,8 @@ export default {
 .detail_content{
   padding: 15px 10px;
   box-sizing: border-box;
-  overflow: hidden;
+  min-height: 700px;
+  overflow-x: hidden;
 
   img{
     max-width: 100%;
