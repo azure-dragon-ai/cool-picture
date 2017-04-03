@@ -46,7 +46,7 @@ export function $dom(data) {
 
 export function homelist($) {
   let list = []
-  $('.camWholeBoxUl li').forEach(el => {
+  Array.prototype.forEach.call($('.camWholeBoxUl li'), el => {
     let href = el.querySelector('.camLiTitleC a').getAttribute('href')
 
     list.push({
@@ -66,7 +66,7 @@ export function homelist($) {
 
 export function showbox($) {
   let list = []
-  $('.indexShowBox li img').forEach(el => {
+  Array.prototype.forEach.call($('.indexShowBox li img'), el => {
     list.push({
       image: el.getAttribute('src')
     })
@@ -86,8 +86,7 @@ export function workShow($) {
   let play = $('#letv-player')[0]
   play && play.parentNode.removeChild(play)
   let show = $('.workShow ul')[0]
-
-  $('.workShow ul li a').forEach(el => {
+  Array.prototype.forEach.call($('.workShow ul li a'), el => {
     let hr = el.getAttribute('href').replace(/\/img.html#src=/,'')
     el.setAttribute('href', hr)
   })
