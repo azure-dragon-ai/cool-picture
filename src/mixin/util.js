@@ -61,7 +61,6 @@ export function homelist($) {
       tuijian: el.querySelectorAll('.camLiDes .cf30')[2].textContent || ''
     })
   })
-  // console.log(list);
   return list
 }
 
