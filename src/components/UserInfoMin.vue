@@ -16,7 +16,7 @@ export default {
 @import "../style/mixin";
 .detail_head {
   background: @base_ground;
-  padding: 15px;
+  padding: 15px 10px;
 
   &_title {
     font-size: 22px;
@@ -33,6 +33,4 @@ export default {
     line-height: 1.4;
   }
 }
-
-
 </style>

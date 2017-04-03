@@ -29,7 +29,7 @@ export default {
 
 <style lang="less">
 .detail_content{
-  padding: 15px;
+  padding: 15px 10px;
   box-sizing: border-box;
   overflow: hidden;
 

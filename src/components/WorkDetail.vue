@@ -34,19 +34,9 @@ export default {
 
 <style lang="less">
 .detail_content{
-  padding: 15px;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  img{
-    max-width: 100%;
-    height: auto !important;
-  }
-
   li {
     list-style: none;
   }
-
   &_info {
     margin-bottom: 15px;
   }
