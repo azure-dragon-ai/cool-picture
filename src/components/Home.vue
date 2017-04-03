@@ -42,6 +42,9 @@ export default {
     cPanel,
     ContentNav
   },
+  activated () {
+    this.$refs.scroller.reset()
+  },
   computed: {
     data() {
       this.$nextTick(() => {

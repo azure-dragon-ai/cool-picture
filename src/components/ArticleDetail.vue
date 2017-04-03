@@ -12,6 +12,7 @@ import UserInfoMin from './UserInfoMin.vue'
 
 export default {
   components: { UserInfoMin },
+  name: 'artocleDetail',
   mounted() {
     jsonp(io_detail, {path: this.$route.path}).then(res => $dom(res.body)).then($ => {
       this.content = workContent($)

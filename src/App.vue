@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <router-view class="content"></router-view>
+    <transition name="move">
+      <keep-alive :exclude="/.+Detail/">
+        <router-view class="content"></router-view>
+      </keep-alive>
+    </transition>
     <v-nav></v-nav>
   </div>
 </template>
@@ -16,4 +20,17 @@ export default {
 
 <style lang="less">
 @import '~vux/src/styles/reset.less';
+
+.move-enter-active,
+.move-leave-active {
+    transition: all 0.3s ease-in-out;
+}
+.move-enter-active {
+    transition-delay: 0.3s;
+}
+.move-enter,
+.move-leave-active {
+    opacity: 0;
+    transform: translateX(80px);
+}
 </style>
