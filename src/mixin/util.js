@@ -95,3 +95,12 @@ export function workShow($) {
 
   return show.innerHTML
 }
+
+export function getUserInfoMin($) {
+	let bar = $('.workTopBar')[0]
+	return {
+		title: bar.querySelector('.workTitle').innerHTML,
+    userName: bar.querySelector('.userName a').innerHTML,
+    more: bar.querySelector('.userInforCon p').innerHTML
+	}
+}

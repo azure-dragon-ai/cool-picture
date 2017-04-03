@@ -1,34 +1,39 @@
 <template>
 <div class="content_full">
-    <div class="cc_detail_content">
-      <div class="cc_detail_content_info" v-html="info"></div>
-      <ul class="cc_detail_content_show" v-html="show"></ul>
-    </div>
+  <user-info-min :info="userinfo" />
+  <div class="detail_content">
+    <div class="detail_content_info" v-html="info"></div>
+    <ul class="detail_content_show" v-html="show"></ul>
+  </div>
 </div>
 </template>
 
 <script>
-import { jsonp, $dom, workInfor, workShow } from '../mixin/util'
+import { jsonp, $dom, workInfor, workShow, getUserInfoMin } from '../mixin/util'
 import { io_detail } from '../mixin/url'
+import UserInfoMin from './UserInfoMin.vue'
 
 export default {
+  components: { UserInfoMin },
   mounted() {
     jsonp(io_detail, {path: this.$route.path}).then(res => $dom(res.body)).then($ => {
       this.info = workInfor($)
       this.show = workShow($)
+      this.userinfo = getUserInfoMin($)
     })
   },
   data () {
     return {
       info: '',
-      show: ''
+      show: '',
+      userinfo: {}
     }
   }
 }
 </script>
 
 <style lang="less">
-.cc_detail_content{
+.detail_content{
   padding: 15px;
   box-sizing: border-box;
   overflow: hidden;
