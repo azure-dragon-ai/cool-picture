@@ -59,6 +59,8 @@ export default {
         margin-bottom: 5px;
         width: 100%;
         padding-top: (188/250)*100%;
+        background: @base_ground;
+        border-radius: 3px;
 
         .image {
           position: absolute;
