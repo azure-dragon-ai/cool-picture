@@ -1,4 +1,4 @@
-# Cool :v: picture
+# Cool :v: picture :evergreen_tree:
 
 - 做个好看的图片收集网站
 - 采用 Vue2 全家桶
