@@ -1,6 +1,6 @@
 # Cool :v: picture :evergreen_tree:
 
-- 做个好看的图片收集网站
+- 做个好看的图片收集网站 努力中... orz
 - 采用 Vue2 全家桶
 - UI 框架 vux `airyland/vux2`
 - 数据采集自 Zcool
@@ -8,7 +8,7 @@
 ## Build Setup
     bash
     # install dependencies
-    npm install
+    npm install --registry=https://registry.npm.taobao.org
 
     # serve with hot reload at localhost:8080
     npm run dev

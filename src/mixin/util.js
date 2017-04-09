@@ -32,11 +32,11 @@ export function jsonp(url, data = {}) {
 // 显示隐藏 loading
 const loadin = document.querySelector('.loading_content_wapper')
 export const showloadin = () => {
-  loadin.classList.remove('hidden-delay')
+  loadin.classList.remove('hidden_delay')
   loadin.style.display = 'block'
 }
 export const hideloadin = () => {
-  loadin.classList.add('hidden-delay')
+  loadin.classList.add('hidden_delay')
   setTimeout(() => loadin.style.display = 'none', 220)
 }
 
