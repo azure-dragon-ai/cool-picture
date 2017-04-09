@@ -1,13 +1,24 @@
 <template>
-<div>
-
-</div>
+  <div>
+    <pre>{{content}}</pre>
+  </div>
 </template>
 
 <script>
 export default {
-  mounted() {
+  components: {  },
+  created() {
+    this.$store.dispatch('getArticles')
+  },
+  computed: {
+    content() {
+      return this.$store.state.articles_data
+    }
+  },
+  data () {
+    return {
 
+    }
   }
 }
 </script>
