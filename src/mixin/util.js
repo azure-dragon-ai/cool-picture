@@ -29,6 +29,17 @@ export function jsonp(url, data = {}) {
   })
 }
 
+// 显示隐藏 loading
+const loadin = document.querySelector('.loading_content_wapper')
+export const showloadin = () => {
+  loadin.classList.remove('hidden-delay')
+  loadin.style.display = 'block'
+}
+export const hideloadin = () => {
+  loadin.classList.add('hidden-delay')
+  setTimeout(() => loadin.style.display = 'none', 220)
+}
+
 // DOM 解析
 const Dom = function (data) {
   var el = document.createElement('div')

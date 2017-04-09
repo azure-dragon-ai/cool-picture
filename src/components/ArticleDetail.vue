@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { jsonp, $dom, workContent, getUserInfoMin } from '../mixin/util'
+import { jsonp, $dom, workContent, getUserInfoMin, showloadin, hideloadin } from '../mixin/util'
 import { io_detail } from '../mixin/url'
 import UserInfoMin from './UserInfoMin.vue'
 
@@ -14,9 +14,11 @@ export default {
   components: { UserInfoMin },
   name: 'artocleDetail',
   mounted() {
+    showloadin()
     jsonp(io_detail, {path: this.$route.path}).then(res => $dom(res.body)).then($ => {
       this.content = workContent($)
       this.userinfo = getUserInfoMin($)
+      hideloadin()
     })
   },
   data () {

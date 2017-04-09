@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { jsonp, $dom, workInfor, workShow, getUserInfoMin } from '../mixin/util'
+import { jsonp, $dom, workInfor, workShow, getUserInfoMin, showloadin, hideloadin } from '../mixin/util'
 import { io_detail } from '../mixin/url'
 import UserInfoMin from './UserInfoMin.vue'
 
@@ -17,10 +17,12 @@ export default {
   components: { UserInfoMin },
   name: 'workDetail',
   mounted() {
+    showloadin()
     jsonp(io_detail, {path: this.$route.path}).then(res => $dom(res.body)).then($ => {
       this.info = workInfor($)
       this.show = workShow($)
       this.userinfo = getUserInfoMin($)
+      hideloadin()
     })
   },
   data () {

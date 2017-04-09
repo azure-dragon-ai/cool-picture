@@ -6,7 +6,8 @@ import {
   jsonp as ajax,
   $dom,
   homelist,
-  showbox
+  showbox,
+  hideloadin
 } from '../mixin/util'
 
 import {
@@ -32,6 +33,7 @@ const actions = {
         list: homelist($),
         showbox: showbox($)
       })
+      hideloadin()
     })
   },
   getListBy({ commit, state }, page) {
