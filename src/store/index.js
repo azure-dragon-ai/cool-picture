@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import NProgress from 'NProgress'
+import 'NProgress/nprogress.css'
 Vue.use(Vuex)
 
 import {
@@ -53,16 +55,18 @@ const actions = {
     })
   },
   getWorks({ commit }, sel = {}) {
-    showloadin(1)
+    NProgress.set(0.4)
     ajax(io_works, sel).then(res => $dom(res.body)).then($ => {
-      hideloadin()
+      NProgress.done()
+      NProgress.remove()
       commit('GET_WORKS', homelist($))
     })
   },
   getArticles({ commit }, sel = {}) {
-    showloadin(1)
+    NProgress.start()
     ajax(io_articles, sel).then(res => $dom(res.body)).then($ => {
-      hideloadin()
+      NProgress.done()
+      NProgress.remove()
     })
   }
 }

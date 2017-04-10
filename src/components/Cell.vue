@@ -2,7 +2,7 @@
   <div class="list_wapper">
     <div class="li_layer vux-1px-b" v-for="(item, index) in list" :key="index" @click.prevent.stop="jmp(item.link)">
       <div class="li_layer_img_w">
-        <img :src="item.image" alt="缩略图" class="image">
+        <img v-lazy="item.image" alt="缩略图" class="image">
       </div>
       <div class="li_layer_i_w">
         <h4 class="title">{{item.title}}</h4>
@@ -52,6 +52,10 @@ export default {
     vertical-align: top;
     .image {
       border-radius: 3px;
+      opacity: 0;
+      &[lazy=loaded] {
+        opacity: 1;
+      }
     }
   }
 

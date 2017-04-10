@@ -24,7 +24,7 @@
 
 ## Development
 - 需要抓取数据可以到 build -> dev-sever 中打开接口
-- build -> fetchData 提供抓取数据数据接口
+- build -> fetchData 提供抓取数据接口
 
 ## Warn :full_moon_with_face:
   采用 cnpm 安装 运行时可能会报 $t 错误
