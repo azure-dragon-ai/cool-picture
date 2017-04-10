@@ -62,7 +62,7 @@ export default {
       font-size: 14px;
       color: @color_tit;
       font-weight: 400;
-      line-height: 1.4;
+      line-height: 1.5;
       height: 45px;
       overflow: hidden;
     }
