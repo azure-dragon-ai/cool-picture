@@ -1,9 +1,11 @@
 # Cool :v: picture :evergreen_tree:
 
-- 做个好看的图片收集网站 努力中... orz
-- 采用 Vue2 全家桶
+- 做个好看的图片收集网站，努力中... :relaxed:
+- 采用 Vue2 全家桶 (vue-cli, vuex, vue-router)
 - UI 框架 vux `airyland/vux2`
-- 数据采集自 Zcool
+- 数据采集自 Zcool 数据真实，但比较粗暴...
+
+![](./static/.w.png)
 
 ## Build Setup
     bash
