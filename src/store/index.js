@@ -58,7 +58,6 @@ const actions = {
     NProgress.set(0.4)
     ajax(io_works, sel).then(res => $dom(res.body)).then($ => {
       NProgress.done()
-      NProgress.remove()
       commit('GET_WORKS', homelist($))
     })
   },
@@ -66,7 +65,6 @@ const actions = {
     NProgress.start()
     ajax(io_articles, sel).then(res => $dom(res.body)).then($ => {
       NProgress.done()
-      NProgress.remove()
     })
   }
 }
