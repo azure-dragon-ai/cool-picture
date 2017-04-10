@@ -20,7 +20,8 @@ export function jsonp(url, data = {}) {
   	document.body.appendChild(os)
 
     window[callbackName] = (json) => {
-  		document.body.removeChild(os)
+      clearTimeout(os.timer)
+  	  document.body.removeChild(os)
       window[callbackName] = null
       res(json)
   	}
@@ -31,7 +32,7 @@ export function jsonp(url, data = {}) {
       document.body.removeChild(os)
       window[callbackName] = null
       rej('链接超时')
-    }, 8000)
+    }, 10000)
   })
 }
 
