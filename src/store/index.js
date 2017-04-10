@@ -7,6 +7,7 @@ import {
   $dom,
   homelist,
   showbox,
+  showloadin,
   hideloadin
 } from '../mixin/util'
 
@@ -52,13 +53,16 @@ const actions = {
     })
   },
   getWorks({ commit }, sel = {}) {
+    showloadin(1)
     ajax(io_works, sel).then(res => $dom(res.body)).then($ => {
+      hideloadin()
       commit('GET_WORKS', homelist($))
     })
   },
   getArticles({ commit }, sel = {}) {
+    showloadin(1)
     ajax(io_articles, sel).then(res => $dom(res.body)).then($ => {
-      console.log($);
+      hideloadin()
     })
   }
 }
