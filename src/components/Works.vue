@@ -1,12 +1,14 @@
 <template>
   <div>
-    <pre>{{content}}</pre>
+    <div class="tab_menu"></div>
+    <c-cell :list="content" />
   </div>
 </template>
 
 <script>
+import cCell from './cell'
 export default {
-  components: {  },
+  components: { cCell },
   created() {
     this.$store.dispatch('getWorks')
   },

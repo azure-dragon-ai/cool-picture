@@ -59,6 +59,8 @@ export function homelist($) {
   let list = []
   Array.prototype.forEach.call($('.camWholeBoxUl li'), el => {
     let href = el.querySelector('.camLiTitleC a').getAttribute('href')
+    let type1 = el.querySelectorAll('.camLiDes a')[0].textContent || ''
+    let type2 = el.querySelectorAll('.camLiDes a')[1].textContent || ''
 
     list.push({
       title: el.querySelector('.camLiTitleC a').textContent,
@@ -69,7 +71,8 @@ export function homelist($) {
       update: (el.querySelector('.camLiDes').innerHTML).match(/<br>(.*)<br>/)[1] || '',
       reqi: el.querySelectorAll('.camLiDes .cf30')[0].textContent || '',
       pinglun: el.querySelectorAll('.camLiDes .cf30')[1].textContent || '',
-      tuijian: el.querySelectorAll('.camLiDes .cf30')[2].textContent || ''
+      tuijian: el.querySelectorAll('.camLiDes .cf30')[2].textContent || '',
+      type: type1 + ' - ' + type2
     })
   })
   return list
