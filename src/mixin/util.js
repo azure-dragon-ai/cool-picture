@@ -26,6 +26,12 @@ export function jsonp(url, data = {}) {
   	}
 
     os.src = baseUrl + '?' + params;
+
+    os.timer = setTimeout(() => {
+      document.body.removeChild(os)
+      window[callbackName] = null
+      rej('链接超时')
+    }, 8000)
   })
 }
 
