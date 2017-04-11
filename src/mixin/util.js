@@ -135,6 +135,11 @@ export function upBox($) {
       title: el.querySelector('.ujTitle a').textContent,
       link: href.replace(/(http:\/\/www.zcool.com.cn)|(\.html)/g,''),
       image: el.querySelector('img').getAttribute('src'),
+      desc: el.querySelectorAll('.blackLink p')[1].textContent,
+      update: (el.querySelector('.blackLink p').innerHTML).match(/<br>(.*?)\s\//)[1] || '',
+      reqi: el.querySelectorAll('.blackLink p .cf30')[0].textContent || '',
+      pinglun: el.querySelectorAll('.blackLink p .cf30')[1].textContent || '',
+      tuijian: el.querySelectorAll('.blackLink p .cf30')[2].textContent || '',
       username: el.querySelector('.upJyBoxCon .vm a').innerHTML,
       userhead: el.querySelector('.upJyBoxCon .vm img').getAttribute('src')
     })
