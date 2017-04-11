@@ -125,3 +125,19 @@ export function getUserInfoMin($) {
     more: bar.querySelector('.userInforCon p').innerHTML
 	}
 }
+
+export function upBox($) {
+  let list = []
+  Array.prototype.forEach.call($('.upJyBox ul li'), el => {
+    let href = el.querySelector('a').getAttribute('href')
+
+    list.push({
+      title: el.querySelector('.ujTitle a').textContent,
+      link: href.replace(/(http:\/\/www.zcool.com.cn)|(\.html)/g,''),
+      image: el.querySelector('img').getAttribute('src'),
+      username: el.querySelector('.upJyBoxCon .vm a').innerHTML,
+      userhead: el.querySelector('.upJyBoxCon .vm img').getAttribute('src')
+    })
+  })
+  return list
+}

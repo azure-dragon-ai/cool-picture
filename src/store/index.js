@@ -9,6 +9,7 @@ import {
   $dom,
   homelist,
   showbox,
+  upBox,
   showloadin,
   hideloadin
 } from '../mixin/util'
@@ -65,6 +66,7 @@ const actions = {
     NProgress.start()
     ajax(io_articles, sel).then(res => $dom(res.body)).then($ => {
       NProgress.done()
+      commit('GET_ARTICLES', upBox($))
     })
   }
 }
