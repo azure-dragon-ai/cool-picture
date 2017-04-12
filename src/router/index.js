@@ -6,7 +6,6 @@ import WorkDetail from '@/components/WorkDetail'
 import Articles from '@/components/Articles'
 import ArticleDetail from '@/components/ArticleDetail'
 import User from '@/components/User'
-import Loading from '@/components/LoadingContent'
 
 Vue.use(Router)
 
@@ -41,11 +40,6 @@ export default new Router({
       path: '/user',
       name: 'User',
       component: User
-    },
-    {
-      path: '/loading',
-      name: 'Loading',
-      component: Loading
     },
     {
       path: '*',
