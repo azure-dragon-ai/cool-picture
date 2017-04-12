@@ -43,7 +43,7 @@ export default {
         {
           cn: 'red',
           ic: 'icon-search',
-          hf: 'javascript:',
+          hf: '#/search',
           tit: '检索'
         }
       ]
