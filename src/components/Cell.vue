@@ -38,9 +38,6 @@ export default {
 <style lang="less">
 @import "../style/mixin.less";
 
-.list_wapper {
-}
-
 .li_layer {
   display: flex;
   padding: 10px;
@@ -86,7 +83,6 @@ export default {
       vertical-align: middle;
       line-height: 22px;
       &_i {
-        display: inline-block;
         float: right;
       }
       &_name {

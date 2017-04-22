@@ -65,6 +65,8 @@ export default {
         font-size: 16px;
         color: @color_tit;
         font-weight: 400;
+        max-height: 50px;
+        overflow: hidden;
       }
       .desc {
         font-size: 12px;
