@@ -73,7 +73,7 @@ export function homelist($) {
 
     list.push({
       title: el.querySelector('.camLiTitleC a').textContent,
-      link: href.replace(/(http:\/\/www.zcool.com.cn)|(\.html)/g,''),
+      link: href.replace(/(http:\/\/old.zcool.com.cn)|(\.html)/g,''),
       image: el.querySelector('img').getAttribute('src'),
       username: el.querySelector('table span').textContent,
       userhead: el.querySelector('table img').getAttribute('src'),
@@ -133,7 +133,7 @@ export function upBox($) {
 
     list.push({
       title: el.querySelector('.ujTitle a').textContent,
-      link: href.replace(/(http:\/\/www.zcool.com.cn)|(\.html)/g,''),
+      link: href.replace(/(http:\/\/old.zcool.com.cn)|(\.html)/g,''),
       image: el.querySelector('img').getAttribute('src'),
       desc: el.querySelectorAll('.blackLink p')[1].textContent,
       update: (el.querySelector('.blackLink p').innerHTML).match(/<br>(.*?)\s\//)[1] || '',
